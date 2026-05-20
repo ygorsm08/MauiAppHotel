@@ -68,7 +68,8 @@
                 <Label Text="Escolha sua Suíte" />
 
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação" />
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <!-- Datas -->
 
@@ -85,6 +86,7 @@
                             <Label Text="Check-in:" />
 
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" />
 
                         </HorizontalStackLayout>
