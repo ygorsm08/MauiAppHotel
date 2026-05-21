@@ -24,15 +24,32 @@ public partial class ContratacaoHospedagem : ContentPage
         await Navigation.PushAsync(new Sobre());
     }
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private async void BtnAvancar_Clicked(object sender, EventArgs e)
     {
-        try
+        if (pck_quarto.SelectedItem == null)
         {
-            Navigation.PushAsync(new HospedagemContratada());
-        }   catch (Exception ex)
-        {
-            DisplayAlert("Ops", ex.Message, "OK");
+            await DisplayAlert("Atenção", "Por favor, selecione uma acomodação.", "OK");
+            return;
         }
+
+        if (stp_adultos.Value == 0)
+        {
+            await DisplayAlert("Atenção", "É necessário ao menos 1 adulto.", "OK");
+            return;
+        }
+
+        if (dtpck_checkout.Date <= dtpck_checkin.Date)
+        {
+            await DisplayAlert("Atenção", "O check-out deve ser após o check-in.", "OK");
+            return;
+        }
+
+        await Navigation.PushAsync(new HospedagemContratada());
+    }
+
+    private async void BtnContato_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Contato());
     }
 
     private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)
@@ -44,5 +61,4 @@ public partial class ContratacaoHospedagem : ContentPage
         dtpck_checkout.MinimumDate = data_selecionada_checkin.AddDays(1);
         dtpck_checkout.MaximumDate = data_selecionada_checkin.AddMonths(6);
     }
-
 }

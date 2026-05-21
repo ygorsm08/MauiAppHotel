@@ -5,9 +5,9 @@
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#0F2027" Offset="0.0"/>
-            <GradientStop Color="#203A43" Offset="0.5"/>
-            <GradientStop Color="#2C5364" Offset="1.0"/>
+            <GradientStop Color="#1B2838" Offset="0.0"/>
+            <GradientStop Color="#2D4A6B" Offset="0.5"/>
+            <GradientStop Color="#1A6B5A" Offset="1.0"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -29,14 +29,14 @@
                 FontFamily="PlaywriteGBS-Italic-VariableFont_wght"
                 FontSize="32"
                 FontAttributes="Bold"
-                TextColor="White"
+                TextColor="#F0C040"
                 HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
                 Text="Bem-vindo ao sistema de hospedagem"
                 FontSize="18"
-                TextColor="White"
+                TextColor="#D0E8F5"
                 HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level2" />
 
@@ -45,14 +45,14 @@
                 Text="Reservar"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill"
-                BackgroundColor="#4CAF50"
+                BackgroundColor="#2E8B57"
                 TextColor="White"
                 CornerRadius="15" />
 
             <Button
                 Text="Sobre"
                 Clicked="ButtonSobre_Clicked"
-                BackgroundColor="#1976D2"
+                BackgroundColor="#2D6DA8"
                 TextColor="White"
                 CornerRadius="15"
                 Margin="0,20,0,0" />
